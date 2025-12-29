@@ -1,3 +1,49 @@
+
+
+<!-- Botão Instalar Rádio Atalaia -->
+<button id="btnInstall" style="display:none; 
+  padding:15px 30px; 
+  font-size:18px; 
+  font-weight:bold; 
+  background:#ff0000; 
+  color:#fff; 
+  border:none; 
+  border-radius:12px; 
+  cursor:pointer; 
+  box-shadow:0 5px 15px rgba(0,0,0,0.4);">
+  Instalar Rádio Atalaia
+</button>
+
+<script>
+let deferredPrompt;
+const btnInstall = document.getElementById('btnInstall');
+
+// Evento disparado quando o PWA pode ser instalado
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault(); // previne prompt automático
+  deferredPrompt = e;
+  btnInstall.style.display = 'inline-block'; // mostra o botão
+});
+
+// Ao clicar no botão, dispara o prompt de instalação
+btnInstall.addEventListener('click', async () => {
+  btnInstall.style.display = 'none';
+  if(deferredPrompt){
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    console.log(outcome === 'accepted' ? 'App instalado!' : 'Instalação cancelada!');
+    deferredPrompt = null;
+  }
+});
+
+// Detecta quando o app é instalado
+window.addEventListener('appinstalled', () => {
+  console.log('Aplicativo instalado com sucesso!');
+});
+</script>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
