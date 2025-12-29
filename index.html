@@ -90,3 +90,47 @@ function stopRadio() {
 
 </body>
 </html>
+
+
+<!-- Botão PWA estilo IEB, inline e isolado -->
+<button id="installBtn" style="
+  background-color:#e60000;
+  color:white;
+  border:none;
+  border-radius:5px;
+  padding:12px 20px;
+  font-weight:bold;
+  cursor:pointer;
+  font-size:16px;
+  display:inline-block;
+">📱 Instalar Rádio Portal Atalaia</button>
+
+<script>
+let deferredPrompt;
+const installBtn = document.getElementById('installBtn');
+
+// Detecta se o navegador suporta PWA e dispara o evento
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault(); // previne o prompt automático
+  deferredPrompt = e;
+  installBtn.style.display = 'inline-block'; // garante que o botão fique visível
+});
+
+// Ao clicar no botão, dispara o prompt de instalação do PWA
+installBtn.addEventListener('click', async () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    const choice = await deferredPrompt.userChoice;
+    if(choice.outcome === 'accepted'){
+      console.log('Usuário aceitou instalar o app!');
+    } else {
+      console.log('Usuário rejeitou instalar o app.');
+    }
+    deferredPrompt = null;
+  } else {
+    // Caso o navegador não suporte PWA, apenas mantém o botão visível
+    alert('Seu navegador não suporta instalação de aplicativo. Acesse pelo Chrome no Android para instalar.');
+  }
+});
+</script>
+
