@@ -4,16 +4,16 @@
   "description": "Os Fatos que Você Precisa Saber",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#000000",
+  "background_color": "#FFFFFF",
   "theme_color": "#e50914",
   "icons": [
     {
-      "src": "https://i.imgur.com/kCm5fFT.png",
+      "src": "https://i.imgur.com/VNAeg5b.jpeg",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "https://i.imgur.com/kCm5fFT.png",
+      "src": "https://i.imgur.com/VNAeg5b.jpeg",
       "sizes": "512x512",
       "type": "image/png"
     }
