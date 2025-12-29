@@ -1,6 +1,6 @@
 {
-  "name": "Ao Vivo",
-  "short_name": "Rádio Atalaia Notícias",
+  "name": "Rádio Atalaia Notícias",
+  "short_name": "Rádio AN",
   "description": "Os Fatos que Você Precisa Saber",
   "start_url": "./index.html",
   "display": "standalone",
