@@ -1,19 +1,19 @@
 {
-  "name": "Rádio Ao Vivo",
-  "short_name": "Rádio",
-  "description": "Rádio transmitindo 24h",
+  "name": "Ao Vivo",
+  "short_name": "Rádio Atalaia Notícias",
+  "description": "Os Fatos que Você Precisa Saber",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#e50914",
   "icons": [
     {
-      "src": "https://i.imgur.com/Z7IVZ6L.png",
+      "src": "https://i.imgur.com/kCm5fFT.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "https://i.imgur.com/Z7IVZ6L.png",
+      "src": "https://i.imgur.com/kCm5fFT.png",
       "sizes": "512x512",
       "type": "image/png"
     }
